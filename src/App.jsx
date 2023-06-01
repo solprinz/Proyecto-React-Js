@@ -1,11 +1,13 @@
-import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { Navbar } from "./components/layout/navbar/Navbar";
+import ProductCard from "./components/common/ProductCard/ProductCard";
+import { ProductsListContainer } from "./components/productsList/ProductsListContainer";
 
 function App() {
   return (
     <div>
       <Navbar />
-      <ItemListContainer greeting={"Bienvenidos"} />
+      <ProductsListContainer />
+      <ProductCard />
     </div>
   );
 }
