@@ -1,20 +1,17 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import {
-  Box,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Box, AppBar, Toolbar, IconButton } from "@mui/material";
 import { CartWidget } from "../../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        position="static"
-        sx={{ backgroundColor: "#7f0909", color: "#ffc500" }}
+        position="sticky"
+        sx={{
+          backgroundColor: "#7f0909",
+          color: "#ffc500",
+        }}
       >
         <Toolbar>
           <IconButton
@@ -26,35 +23,19 @@ export const Navbar = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              fontFamily: "Harry P",
-              fontSize: "70px",
-            }}
-          >
+          <Link to="/" className="logo">
             lumos
-          </Typography>
-          <ul
-            style={{
-              listStyleType: "none",
-            }}
-          >
-            <a href="#">
-              <li>Indumentaria</li>
-            </a>
-            <a href="#">
-              <li>Accesorios</li>
-            </a>
-            <a href="#">
-              <li>Tazas</li>
-            </a>
-          </ul>
-          <Button color="inherit">
+          </Link>
+
+          <div className="categorias">
+            <Link to="/">Inicio</Link>
+            <Link to="/category/indumentaria">Indumentaria</Link>
+            <Link to="/category/tazas">Tazas</Link>
+            <Link to="/category/accesorios">Accesorios</Link>
+          </div>
+          <Link to="/carrito" style={{ color: "#ffc500" }}>
             <CartWidget />
-          </Button>
+          </Link>
         </Toolbar>
       </AppBar>
     </Box>

@@ -4,17 +4,37 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 @font-face {
   font-family: "Harry P";
   src: url(https://www.dafont.com/harry-p.font);
 }
 
-li {
+.categorias {
   display: inline-block;
   color: #ffc500;
-  margin: 0 10px;
+  margin: 0 20px;
+  text-align: center;
 }
 
-a:hover {
+.categorias a {
+  color: #ffc500;
+  text-decoration: none;
+  margin: 0 20px;
+  text-align: center;
+}
+.categorias a:hover {
   text-transform: uppercase;
+  color: #ffc500;
+}
+
+.logo {
+  color: #ffc500;
+  flex-grow: 1;
+  font-family: "Harry P";
+  font-size: 70px;
+  text-decoration: none;
 }

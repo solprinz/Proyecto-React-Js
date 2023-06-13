@@ -2,34 +2,38 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Typography,
-  Button,
   CardActions,
+  Button,
 } from "@mui/material";
-//import { ShoppingCartIcon } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
-const ProductCard = ({ elemento }) => {
+export const ProductCard = ({ elemento }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image={elemento.img}
-        title={elemento.title}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {elemento.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {/*           {elemento.description}
-           */}{" "}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Agregar al carrito</Button>
-      </CardActions>
-    </Card>
+    <div>
+      <Card
+        sx={{
+          width: 300,
+          height: 450,
+        }}
+        className="cards"
+      >
+        <CardMedia
+          sx={{ height: 300 }}
+          image={elemento.img}
+          title={elemento.title}
+        />
+        <CardContent>
+          <h2 style={{}}>{elemento.title}</h2>
+          <h4 style={{ textAlign: "end", color: "#7f0909", marginTop: 10 }}>
+            ${elemento.price}
+          </h4>
+        </CardContent>
+        <CardActions>
+          <Link to={`/itemDetail/${elemento.id}`}>
+            <Button>Ver detalle</Button>
+          </Link>
+        </CardActions>
+      </Card>
+    </div>
   );
 };
-
-export default ProductCard;
