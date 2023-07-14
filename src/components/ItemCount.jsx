@@ -1,28 +1,35 @@
 import { useCount } from "./hooks/useCount";
+import "./pages/cart/Cart.css";
 
 export const ItemCount = ({ stock, initial, onAdd }) => {
   const { count, decrement, increment } = useCount(initial, stock);
   return (
     <>
       <div className="itemCount" style={{ textAlign: "center" }}>
-        <button style={{ paddingLeft: 3, paddingRight: 3 }} onClick={decrement}>
+        <button
+          style={{
+            padding: "5px 10px",
+            border: " #7f0909 solid 2px",
+            borderRadius: "10px",
+          }}
+          onClick={decrement}
+        >
           -
         </button>
         <span style={{ margin: 5 }}>{count}</span>
-        <button style={{ paddingLeft: 3, paddingRight: 3 }} onClick={increment}>
+        <button
+          style={{
+            padding: "5px 10px",
+            border: " #7f0909 solid 2px",
+            borderRadius: "10px",
+          }}
+          onClick={increment}
+        >
           +
         </button>
       </div>
       <div style={{ textAlign: "center", margin: 10 }}>
-        <button
-          style={{
-            borderRadius: 10,
-            border: "2px solid black",
-            padding: 5,
-            textAlign: "center",
-          }}
-          onClick={() => onAdd(count)}
-        >
+        <button className="btnCarrito" onClick={() => onAdd(count)}>
           Agregar al carrito
         </button>
       </div>

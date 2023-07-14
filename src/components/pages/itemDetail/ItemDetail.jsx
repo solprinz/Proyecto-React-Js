@@ -1,17 +1,7 @@
+import { Link } from "react-router-dom";
 import { ItemCount } from "../../ItemCount";
 
-export const ItemDetail = ({ productSelected }) => {
-  const onAdd = (cantidad) => {
-    let data = { ...productSelected, quantity: cantidad };
-
-    console.log(
-      "Has agregado al carrito ",
-      data.quantity,
-      "unidades del producto",
-      data.title
-    );
-  };
-
+export const ItemDetail = ({ productSelected, onAdd, cantidad }) => {
   return (
     <>
       <div
@@ -32,21 +22,29 @@ export const ItemDetail = ({ productSelected }) => {
           </h2>
           <img src={productSelected.img} style={{ height: 400 }} alt="" />
 
-          {productSelected.stock > 0 ? (
+          {productSelected.stock === 0 ? (
+            <div style={{ textAlign: "center", margin: 10 }}>
+              <p style={{ margin: 20 }}>
+                Lo sentimos, no hay stock disponible🙁
+              </p>
+              <Link to="/" className="btnCarrito">
+                Volver atrás
+              </Link>
+            </div>
+          ) : (
             <>
+              <p style={{ textAlign: "center", margin: 10 }}>
+                {productSelected.description}
+              </p>
               <h4 style={{ textAlign: "center", margin: 10 }}>
-                ${productSelected.price}
+                ${productSelected.price} c/u
               </h4>
               <ItemCount
                 stock={productSelected.stock}
-                initial={1}
+                initial={cantidad} //chequear que quede la cantidad que habaiamos agregado al carrito
                 onAdd={onAdd}
               />
             </>
-          ) : (
-            <p style={{ textAlign: "center", marginBottom: 10 }}>
-              Lo sentimos, no hay stock disponible
-            </p>
           )}
         </div>
       </div>

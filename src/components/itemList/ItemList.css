@@ -12,3 +12,19 @@
   border: 3px solid black;
   margin: 10px;
 }
+
+.titleImg {
+  height: 65px;
+}
+@media (max-width: 900px) {
+  .cards {
+    max-height: 320px;
+    max-width: 200px;
+  }
+  .cardsImg {
+    max-height: 30px;
+  }
+  .titleImg {
+    height: 20px;
+  }
+}

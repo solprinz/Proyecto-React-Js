@@ -3,7 +3,7 @@ import { ProductCard } from "../common/ProductCard/ProductCard";
 
 export const ItemList = ({ items }) => {
   return (
-    <div>
+    <>
       <h1
         style={{
           fontFamily: "Harry P",
@@ -21,6 +21,6 @@ export const ItemList = ({ items }) => {
           return <ProductCard key={elemento.id} elemento={elemento} />;
         })}
       </div>
-    </div>
+    </>
   );
 };

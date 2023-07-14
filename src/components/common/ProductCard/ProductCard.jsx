@@ -13,18 +13,19 @@ export const ProductCard = ({ elemento }) => {
       <Card
         sx={{
           width: 300,
-          height: 450,
+          height: 480,
         }}
         className="cards"
       >
         <CardMedia
-          sx={{ height: 300 }}
+          sx={{ height: 300, minHeight: 200 }}
           image={elemento.img}
+          className="cardsImg"
           title={elemento.title}
         />
         <CardContent>
-          <h2 style={{}}>{elemento.title}</h2>
-          <h4 style={{ textAlign: "end", color: "#7f0909", marginTop: 10 }}>
+          <h2 className="titleImg">{elemento.title}</h2>
+          <h4 style={{ textAlign: "end", color: "#7f0909" }}>
             ${elemento.price}
           </h4>
         </CardContent>

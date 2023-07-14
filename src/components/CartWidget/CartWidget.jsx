@@ -1,21 +1,21 @@
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Box } from "@mui/material";
+import { BsFillCartCheckFill } from "react-icons/bs";
+import { Badge } from "@mui/material";
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
 
 export const CartWidget = () => {
+  const { getTotalItems } = useContext(CartContext);
+  let totalItems = getTotalItems();
   return (
-    <Box>
-      <ShoppingCartIcon fontSize="large" />
-      <span
-        style={{
-          position: "absolute",
-          border: "#ffc500 solid 1px",
-          borderRadius: "150px",
-          padding: "0 6px",
-          fontSize: "10px",
-        }}
+    <>
+      <Badge
+        style={{ color: "#ffc500" }}
+        badgeContent={totalItems}
+        showZero
+        color="secondary"
       >
-        2
-      </span>
-    </Box>
+        <BsFillCartCheckFill size="30px" />
+      </Badge>
+    </>
   );
 };

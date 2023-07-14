@@ -14,21 +14,38 @@ body {
 }
 
 .categorias {
-  display: inline-block;
   color: #ffc500;
   margin: 0 20px;
   text-align: center;
+  justify-content: flex-end;
 }
 
 .categorias a {
+  color: #ffc500;
+  margin: 0 20px;
+  text-align: center;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.categorias a:hover {
+  color: #ffc500;
+  margin: 0 20px;
+  text-align: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  border-bottom: #ffc500 solid 2px;
+}
+
+.links {
   color: #ffc500;
   text-decoration: none;
   margin: 0 20px;
   text-align: center;
 }
-.categorias a:hover {
-  text-transform: uppercase;
+.links:hover {
   color: #ffc500;
+  border-top: #ffc500 solid 2px;
 }
 
 .logo {

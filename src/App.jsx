@@ -1,49 +1,51 @@
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import { ItemListContainer } from "./components/itemList/ItemListContainer";
 import { Layout } from "./components/layout/Layout";
-import { CartContainer } from "./components/pages/cart/CartContainer";
-import { ItemDetailContainer } from "./components/pages/itemDetail/itemDetailContainer";
+import CartContextProvider from "./context/CartContext";
+import { menuRoutes } from "./routes/menuRoutes";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<ItemListContainer />} />
+      <CartContextProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            {menuRoutes.map(({ id, path, Element }) => (
+              <Route key={id} path={path} element={<Element />} />
+            ))}
+          </Route>
           <Route
-            path="/category/:categoryName"
-            element={<ItemListContainer />}
+            path="*"
+            element={
+              <div style={{ textAlign: "center" }}>
+                <h1
+                  style={{
+                    fontFamily: "Harry P",
+                    fontSize: "50px",
+                    margin: 40,
+                  }}
+                >
+                  Página no encontrada
+                </h1>
+                <Link
+                  to="/"
+                  style={{
+                    border: "2px solid #7f0909",
+                    padding: "10px 10px",
+                    textAlign: "center",
+                    color: "#ffc500",
+                    backgroundColor: "#7f0909",
+                    textDecoration: "none",
+                  }}
+                >
+                  Volver atrás
+                </Link>
+              </div>
+            }
           />
-          <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
-          <Route path="/carrito" element={<CartContainer />} />
-        </Route>
-        <Route
-          path="*"
-          element={
-            <>
-              <h1>404 not found</h1>
-              <Link to="/">Volver atrás</Link>
-            </>
-          }
-        />
-      </Routes>
+        </Routes>
+      </CartContextProvider>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
-
-{
-  /* <h1
-style={{
-  fontFamily: "Harry P",
-  textAlign: "center",
-  fontSize: "100px",
-  color: "#7f0909",
-  marginTop: "20px",
-  letterSpacing: "15px",
-}}
->
-Bienvenidos
-</h1> */
-}
