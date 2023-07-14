@@ -8,10 +8,10 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Harry P";
   src: url(https://www.dafont.com/harry-p.font);
-}
+} */
 
 .categorias {
   color: #ffc500;
