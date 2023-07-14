@@ -20,6 +20,7 @@ export const CheckoutContainer = () => {
       card: "",
       exp: "",
       cod: "",
+      repemail: "",
     },
 
     onSubmit: (data) => {
@@ -45,7 +46,11 @@ export const CheckoutContainer = () => {
         .required("Este campo es requerido")
         .min(3, "Este campo debe contener al menos 3 carácteres"),
       email: Yup.string()
-        .email("Debes ingresar un e-mail")
+        .email("El e-mail no tiene un formato válido")
+        .required("Este campo es requerido")
+        .min(8),
+      repemail: Yup.string()
+        .email("El e-mail no coincide")
         .required("Este campo es requerido")
         .min(8),
       phone: Yup.string()

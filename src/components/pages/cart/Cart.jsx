@@ -65,10 +65,6 @@ export const Cart = ({ limpiar, total, cart, removeById, totalItems }) => {
                 Cantidad de productos: {totalItems}
               </h3>
               <h3 style={{ margin: "20px" }}>Total de la compra: ${total}</h3>
-              <div>
-                <h4>Cupon de descuento: </h4>
-                <input type="text" />
-              </div>
 
               <button onClick={limpiar} className="btnCompra">
                 Limpiar carrito

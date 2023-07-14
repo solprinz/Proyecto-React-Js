@@ -6,7 +6,7 @@ import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import DateRangeRoundedIcon from "@mui/icons-material/DateRangeRounded";
 import HttpsRoundedIcon from "@mui/icons-material/HttpsRounded";
 import { Grid, ListItem } from "@mui/material";
-
+import "../cart/Cart.css";
 export const Checkout = ({ handleSubmit, handleChange, errors, total }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -45,6 +45,23 @@ export const Checkout = ({ handleSubmit, handleChange, errors, total }) => {
               onChange={handleChange}
               helperText={errors.email}
               error={errors.email ? true : false}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <EmailRoundedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </ListItem>
+          <ListItem>
+            <TextField
+              label="Repetir email"
+              variant="outlined"
+              name="repemail"
+              onChange={handleChange}
+              helperText={errors.repemail}
+              error={errors.repemail ? true : false}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -127,7 +144,11 @@ export const Checkout = ({ handleSubmit, handleChange, errors, total }) => {
               }}
             />
           </ListItem>
-          <Button type="submit" style={{ margin: "10px" }}>
+          <Button
+            className="btnCompra"
+            type="submit"
+            style={{ margin: "10px", backgroundColor: "#ffc500" }}
+          >
             Pagar ${total}
           </Button>
         </Grid>
