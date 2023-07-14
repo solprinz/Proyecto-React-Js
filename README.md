@@ -4,7 +4,7 @@
 
 ### Proyecto final del curso de React Js
 
-![]([https://res.cloudinary.com/diiphots8/image/upload/v1689343318/HarryP_dzesvo.png](https://res.cloudinary.com/diiphots8/image/upload/v1689351106/Captura_de_pantalla_2023-07-14_a_las_13.10.11_mfn3gz.png))
+![](https://res.cloudinary.com/diiphots8/image/upload/v1689351106/Captura_de_pantalla_2023-07-14_a_las_13.10.11_mfn3gz.png)
 
 
 ## Librerias utilizadas:
